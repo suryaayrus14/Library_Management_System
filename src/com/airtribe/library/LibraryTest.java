@@ -159,20 +159,11 @@ public class LibraryTest {
 
         context.patronService.addPatron(context.patron);
 
-        context.lendingService.checkOutBook(
-                "ISBN-001",
-                "P001"
-        );
+        context.lendingService.checkOutBook("ISBN-001", "P001");
 
-        context.lendingService.returnBook(
-                "ISBN-001",
-                "P001"
-        );
+        context.lendingService.returnBook("ISBN-001", "P001");
 
-        assertTrue(
-                context.book.getStatus() == BookStatus.AVAILABLE,
-                "Return book"
-        );
+        assertTrue(context.book.getStatus() == BookStatus.AVAILABLE, "Return book");
     }
 
     private static void testReservation() {
